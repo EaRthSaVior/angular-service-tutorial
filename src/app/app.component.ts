@@ -13,5 +13,8 @@ export class AppComponent {
   accounts: Account[] = [];
   constructor(private accountService: AccountService) {
     this.accounts = this.accountService.getAccounts;
+    this.accountService.statusAlert.subscribe((status: string) => {
+      alert(`Account status changed to ${status}`);
+    });
   }
 }

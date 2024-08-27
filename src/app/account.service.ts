@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Account } from './account.model';
 import { LoggingService } from './logging.service';
 @Injectable()
 export class AccountService {
+  @Output() statusAlert = new EventEmitter<string>();
   constructor(private loggingService: LoggingService) {}
   private accounts = [
     {

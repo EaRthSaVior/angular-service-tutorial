@@ -18,5 +18,6 @@ export class AccountComponent {
       newStatus: status,
     });
     // console.log('A server status changed, new status: ' + status);
+    this.accountService.statusAlert.emit(status);
   }
 }
